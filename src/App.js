@@ -1,9 +1,14 @@
-import './App.css';
+import { Fragment } from "react";
+import "./App.css";
+import LogInBtn from "./components/LogInBtn";
+import LogOutBtn from "./components/LogOutBtn";
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Fragment>
+      <LogInBtn />
+      <LogOutBtn />
+    </Fragment>
   );
 }
 
