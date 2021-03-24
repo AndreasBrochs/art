@@ -8,9 +8,6 @@ body {
     padding: 2rem;
 }
 
-button {
-    margin: 2rem 0;
-    padding: 1rem 2rem;
-    width: 120px;
-    cursor: pointer;
+.main-content {
+    margin: 4rem 2.5rem;
 }
