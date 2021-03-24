@@ -1,8 +1,9 @@
 import { Fragment } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
-import LogInBtn from "./components/LogInBtn";
-import LogOutBtn from "./components/LogOutBtn";
+import LandingPage from "./components/LandingPage";
 import Profile from "./components/Profile";
+import NavBar from "./components/NavBar";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
@@ -11,11 +12,17 @@ function App() {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <Fragment>
-      <LogInBtn />
-      <LogOutBtn />
-      <Profile />
-    </Fragment>
+    <BrowserRouter>
+      <Fragment>
+        <NavBar />
+        <main className="main-content">
+          <Switch>
+            <Route path="/" component={LandingPage} exact />
+            <Route path="/profile" component={Profile} />
+          </Switch>
+        </main>
+      </Fragment>
+    </BrowserRouter>
   );
 }
 
